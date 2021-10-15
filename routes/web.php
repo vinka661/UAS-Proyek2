@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/', 'DashboardController@index')->name('dashboard');
+
+//jenisproduk
+Route::get('jenisproduk', 'JenisProdukController@index')->name('jenisproduk');
