@@ -27,7 +27,7 @@
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Produk</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="{{ route('produk') }}">Data Produk</a></li>
-                                <li><a class="dropdown-item" href="{{ route('jenisproduk') }}">Data Jenis Produk</a></li>
+                                <li><a class="dropdown-item" href="{{ route('jenisproduk') }}">Data Produk</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="#!">Persewaan</a></li>
@@ -48,7 +48,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Data Jenis Produk</h1>
+            <h1 class="m-0 text-dark">Data Produk</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -62,27 +62,35 @@
           <div class="col-lg-12">
             <div class="card card-primary card-outline">
               <div class="card-header">
-                <a href="{{ route('createJenisProduk') }}"><button  class="btn btn-primary btn-sm"><i class="bi-plus"></i> Tambah Baru</button></a>
+                <a href="{{ route('createProduk') }}"><button  class="btn btn-primary btn-sm"><i class="bi-plus"></i> Tambah Baru</button></a>
               </div>
               <div class="card-body table-responsive p-0" style="height: 400px;">
                   <table class="table table-head-fixed text-nowrap">
                     <thead>
                       <tr>
                         <th>#</th>
-                        <th>ID Jenis Produk</th>
-                        <th>Nama Jenis Produk</th>
+                        <th>ID Produk</th>
+                        <th>Nama Produk</th>
+                        <th>Harga</th>
+                        <th>Satuan</th>
+                        <th>Status</th>
+                        <th>Jenis Produk</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($jenisproduk as $key => $item)
+                      @foreach ($produk as $key => $item)
                           <tr>
                             <td>{{ ++$key }}</td>
                             <td>{{ $item->id }}</td>
-                            <td>{{ $item->namajenis }}</td>
+                            <td>{{ $item->namaproduk }}</td>
+                            <td>{{ $item->harga }}</td>
+                            <td>{{ $item->satuan }}</td>
+                            <td>{{ $item->status }}</td>
+                            <td>{{ $item->jenisproduk->namajenis }}</td>
                             <td>
-                              <a href="{{ route('editJenisProduk', $item->id) }}"><button  class="btn btn-danger btn-sm"><i class="bi-pencil-fill"></i> Edit</button></a>
-                              <a href="{{ route('deleteJenisProduk', $item->id) }}"><button  class="btn btn-warning btn-sm"><i class="bi-trash"></i> Delete</button></a>
+                              <a href="{{ route('editProduk', $item->id) }}"><button  class="btn btn-danger btn-sm"><i class="bi-pencil-fill"></i> Edit</button></a>
+                              <a href="{{ route('deleteProduk', $item->id) }}"><button  class="btn btn-warning btn-sm"><i class="bi-trash"></i> Delete</button></a>
                             </td>
                           </tr>
                       @endforeach

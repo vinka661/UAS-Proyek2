@@ -10,7 +10,7 @@
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../css/styles.css" rel="stylesheet" />
         <!-- Font Awesome Icons -->
         <link rel="stylesheet" href="{{ url('assets/plugins/fontawesome-free/css/all.min.css') }}">
     </head>
@@ -42,13 +42,13 @@
                 </div>
             </div>
         </nav>
-    <div class="content-wrapper">
+        <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Data Jenis Produk</h1>
+            <h1 class="m-0 text-dark">Tambah Produk Baru</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -61,34 +61,52 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="card card-primary card-outline">
-              <div class="card-header">
-                <a href="{{ route('createJenisProduk') }}"><button  class="btn btn-primary btn-sm"><i class="bi-plus"></i> Tambah Baru</button></a>
-              </div>
-              <div class="card-body table-responsive p-0" style="height: 400px;">
-                  <table class="table table-head-fixed text-nowrap">
-                    <thead>
-                      <tr>
-                        <th>#</th>
-                        <th>ID Jenis Produk</th>
-                        <th>Nama Jenis Produk</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      @foreach ($jenisproduk as $key => $item)
-                          <tr>
-                            <td>{{ ++$key }}</td>
-                            <td>{{ $item->id }}</td>
-                            <td>{{ $item->namajenis }}</td>
-                            <td>
-                              <a href="{{ route('editJenisProduk', $item->id) }}"><button  class="btn btn-danger btn-sm"><i class="bi-pencil-fill"></i> Edit</button></a>
-                              <a href="{{ route('deleteJenisProduk', $item->id) }}"><button  class="btn btn-warning btn-sm"><i class="bi-trash"></i> Delete</button></a>
-                            </td>
-                          </tr>
-                      @endforeach
-                    </tbody>
-                  </table>
-              </div>
+              <form role="form" action="{{ route('storeProduk') }}" method="POST">
+                @csrf
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="namaproduk">Nama Produk</label>
+                    <input type="text" class="form-control" id="namaproduk" name="namaproduk" placeholder="Nama Produk" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="harga">Harga</label>
+                    <input type="number" class="form-control" id="harga" name="harga" placeholder="Harga" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="satuan">Satuan</label>
+                    <input type="text" class="form-control" id="satuan" name="satuan" placeholder="Satuan" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="status">Status</label>
+                    <div class="d-flex">
+                        <div class="custom-control custom-radio mr-3">
+                          <input class="custom-control-input" type="radio" id="disewa" name="status" value="Disewa" required>
+                          <label for="disewa" class="custom-control-label">Disewa</label>
+                        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <div class="custom-control custom-radio">
+                          <input class="custom-control-input" type="radio" id="belum_sewa" name="status" value="Belum Sewa" required>
+                          <label for="belum_sewa" class="custom-control-label">Belum Sewa</label>
+                        </div>
+                    </div><br>
+                   </div>
+                        <div class="form-group">
+                            <label for="jenis">Jenis</label>
+                            <select class="form-control select2bs4" name="jenis" id="jenis" style="width: 100%;" required>
+                                @foreach ($jenisproduk as $item)
+                                    <option value="{{ $item->id }}">{{ $item->namajenis }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary mr-1">Submit</button>
+                  <a href="{{ route('produk') }}" class="btn btn-default">Cancel</a>
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -96,6 +114,6 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
-  </div>
+    </div>
     </body>
 </html>
