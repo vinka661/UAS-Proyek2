@@ -11,12 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('master');
-});
+// Route::get('/', function () {
+//     return view('master');
+// });
 
-Route::get('/produk', 'DashboardController@produk')->name('produk');
-Route::get('/beranda', 'DashboardController@beranda')->name('beranda');
+Route::get('/produk1', 'DashboardController@produk1')->name('produk1');
+Route::get('/', 'DashboardController@beranda')->name('beranda');
 //jenisproduk
 Route::get('jenisproduk', 'JenisProdukController@index')->name('jenisproduk');
 Route::get('jenisproduk/create', 'JenisProdukController@create')->name('createJenisProduk');

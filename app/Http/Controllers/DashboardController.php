@@ -10,8 +10,8 @@ class DashboardController extends Controller
     {
         return view('beranda');
     }
-    public function produk()
+    public function produk1()
     {
-        return view('produk');
+        return view('produk1');
     }
 }
