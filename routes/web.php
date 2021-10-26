@@ -34,6 +34,9 @@ Route::post('produk/update/{id}', 'ProdukController@update')->name('updateProduk
 Route::get('produk/delete/{id}', 'ProdukController@destroy')->name('deleteProduk');
 Auth::routes();
 
+//persewaan
+Route::get('persewaan', 'PersewaanController@index')->name('persewaan');
+
 //sistem user
 Route::get('sistemUser', 'SistemUserController@index')->name('sistemUser');
 

@@ -30,7 +30,7 @@
                                 <li><a class="dropdown-item" href="{{ route('jenisproduk') }}">Data Jenis Produk</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Persewaan</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('persewaan') }}">Persewaan</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('sistemUser') }}">Sistem User</a></li>
                     </ul>
                     <form class="d-flex">
