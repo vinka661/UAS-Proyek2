@@ -51,6 +51,10 @@
                     </div>
                   </div>
                   <div class="form-group">
+                    <label for="stok">Stok</label>
+                    <input type="number" class="form-control" id="stok" name="stok" value="{{ $produk->stok }}">
+                  </div>
+                  <div class="form-group">
                     <label for="jenis">Jenis</label>
                     <select class="form-control select2bs4" name="jenis" id="jenis" style="width: 100%;">
                       @foreach ($jenisproduk as $item)

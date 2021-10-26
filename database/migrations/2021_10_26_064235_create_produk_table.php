@@ -19,7 +19,8 @@ class CreateProdukTable extends Migration
             $table->integer('harga');
             $table->string('satuan');
             $table->string('status');
-            $table->unsignedBigInteger('id_jenis');
+            $table->integer('stok');
+            $table->unsignedInteger('id_jenis');
             $table->timestamps();
             $table->foreign('id_jenis')->references('id')->on('jenisproduks');
         });

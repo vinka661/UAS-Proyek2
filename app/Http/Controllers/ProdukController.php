@@ -33,6 +33,7 @@ class ProdukController extends Controller
             'harga' => $request->harga,
             'satuan' => $request->satuan,
             'status' => $request->status,
+            'stok' => $request->stok,
             'id_jenis' => $request->jenis,
         ]);
         return redirect('produk');
@@ -52,6 +53,7 @@ class ProdukController extends Controller
         $produk->harga = $request->harga;
         $produk->satuan = $request->satuan;
         $produk->status = $request->status;
+        $produk->stok = $request->stok;
         $produk->id_jenis = $request->jenis;
         $produk->save();
         return redirect('produk');

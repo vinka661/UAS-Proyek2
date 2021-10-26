@@ -5,9 +5,9 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
-class Produk extends Model
+class Persewaan extends Model
 {
-    public $table = "produk";
+    public $table = "persewaan";
     protected $fillable = ['namaproduk', 'harga', 'satuan', 'status', 'stok', 'id_jenis'];
 
     public function jenisproduk()

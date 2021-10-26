@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Data Produk</h1>
+            <h1 class="m-0 text-dark">Data Sistem User</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -21,37 +21,31 @@
           <div class="col-lg-12">
             <div class="card card-primary card-outline">
               <div class="card-header">
-                <a href="{{ route('createProduk') }}"><button  class="btn btn-primary btn-sm"><i class="bi-plus"></i> Tambah Baru</button></a>
+                <a href=""><button  class="btn btn-primary btn-sm"><i class="bi-plus"></i> Tambah Baru</button></a>
               </div>
               <div class="card-body table-responsive p-0" style="height: 800px;">
                   <table class="table table-head-fixed text-nowrap">
                     <thead>
                       <tr>
                         <th>#</th>
-                        <th>ID Produk</th>
-                        <th>Nama Produk</th>
-                        <th>Harga</th>
-                        <th>Satuan</th>
-                        <th>Status</th>
-                        <th>Stok</th>
-                        <th>Jenis Produk</th>
+                        <th>Nama User</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Roles</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($produk as $key => $item)
+                      @foreach ($sistemuser as $key => $item)
                           <tr>
                             <td>{{ ++$key }}</td>
-                            <td>{{ $item->id }}</td>
-                            <td>{{ $item->namaproduk }}</td>
-                            <td>{{ $item->harga }}</td>
-                            <td>{{ $item->satuan }}</td>
-                            <td>{{ $item->status }}</td>
-                            <td>{{ $item->stok }}</td>
-                            <td>{{ $item->jenisproduk->namajenis }}</td>
+                            <td>{{ $item->name }}</td>
+                            <td>{{ $item->email }}</td>
+                            <td>{{ $item->password }}</td>
+                            <td>{{ $item->roles }}</td>
                             <td>
-                              <a href="{{ route('editProduk', $item->id) }}"><button  class="btn btn-danger btn-sm"><i class="bi-pencil-fill"></i> Edit</button></a>
-                              <a href="{{ route('deleteProduk', $item->id) }}"><button  class="btn btn-warning btn-sm"><i class="bi-trash"></i> Delete</button></a>
+                              <a href=""><button  class="btn btn-danger btn-sm"><i class="bi-pencil-fill"></i> Edit</button></a>
+                              <a href=""><button  class="btn btn-warning btn-sm"><i class="bi-trash"></i> Delete</button></a>
                             </td>
                           </tr>
                       @endforeach

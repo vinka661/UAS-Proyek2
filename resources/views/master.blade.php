@@ -11,7 +11,7 @@
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../css/styles.css" rel="stylesheet" />
     </head>
     <body>
         <!-- Navigation--> 
@@ -31,7 +31,7 @@
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="#!">Persewaan</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Sistem User</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('sistemUser') }}">Sistem User</a></li>
                     </ul>
                     <form class="d-flex">
                         <button class="btn btn-outline-light" type="submit">
