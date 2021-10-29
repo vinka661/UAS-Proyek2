@@ -7,7 +7,8 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Data Sistem User</h1>
+            <br>
+            <h2 class="m-0 text-dark"><strong>DATA SISTEM USER</strong></h2></br>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -24,7 +25,7 @@
                 <a href=""><button  class="btn btn-primary btn-sm"><i class="bi-plus"></i> Tambah Baru</button></a>
               </div>
               <div class="card-body table-responsive p-0" style="height: 800px;">
-                  <table class="table table-head-fixed text-nowrap">
+                  <table class="table table-bordered table-striped">
                     <thead>
                       <tr>
                         <th>#</th>

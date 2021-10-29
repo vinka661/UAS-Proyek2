@@ -1,11 +1,15 @@
 @extends('master')
 @section('konten') 
  <!-- Content Header (Page header) -->
+ <section>
+    <div class="container ">
             <div class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">Edit Produk</h1>
+                          <br>
+                            <h2 class="m-0 text-dark"><strong>Edit Produk</strong></h2>
+                          <br>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
@@ -22,23 +26,29 @@
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="id_produk">ID Produk</label>
-                    <input type="text" class="form-control" id="id_produk" name="id_produk" value="{{ $produk->id }}" disabled>
+                    <label for="id_produk"><strong>ID Produk</strong></label>
+                    <input type="text" class="form-control" id="id_produk" name="id_produk" value="{{ $produk->id }}" disabled><br>
                   </div>
                   <div class="form-group">
-                    <label for="namaproduk">Nama Produk</label>
-                    <input type="text" class="form-control" id="namaproduk" name="namaproduk" value="{{ $produk->namaproduk }}">
+                    <label for="namaproduk"><strong>Nama Produk</strong></label>
+                    <input type="text" class="form-control" id="namaproduk" name="namaproduk" value="{{ $produk->namaproduk }}"><br>
+                  </div>
+                  <div class="form-group"> 
+                <label for="image"><strong>Image</strong></label>                 
+                <input type="file" class="form-control" required="required" name="image" value="{{$produk->image}}"></br> 
+                <img width="150px" src="{{asset('storage/'.$produk->image)}}">
+                 </div> 
+                 <br>
+                  <div class="form-group">
+                    <label for="harga"><strong>Harga</strong></label>
+                    <input type="number" class="form-control" id="harga" name="harga" value="{{ $produk->harga }}"><br>
                   </div>
                   <div class="form-group">
-                    <label for="harga">Harga</label>
-                    <input type="number" class="form-control" id="harga" name="harga" value="{{ $produk->harga }}">
+                    <label for="satuan"><strong>Satuan</strong></label>
+                    <input type="text" class="form-control" id="satuan" name="satuan" value="{{ $produk->satuan }}"><br>
                   </div>
                   <div class="form-group">
-                    <label for="satuan">Satuan</label>
-                    <input type="text" class="form-control" id="satuan" name="satuan" value="{{ $produk->satuan }}">
-                  </div>
-                  <div class="form-group">
-                    <label for="status">Status</label>
+                    <label for="status"><strong>Status</strong></label>
                     <div class="d-flex">
                         <div class="custom-control custom-radio mr-3">
                           <input class="custom-control-input" type="radio" id="disewa" name="status" value="Disewa" {{ $produk->status == 'Disewa' ? 'checked' : ''}}>
@@ -50,12 +60,13 @@
                         </div>
                     </div>
                   </div>
+                  <br>
                   <div class="form-group">
-                    <label for="stok">Stok</label>
-                    <input type="number" class="form-control" id="stok" name="stok" value="{{ $produk->stok }}">
+                    <label for="stok"><strong>Stok</strong></label>
+                    <input type="number" class="form-control" id="stok" name="stok" value="{{ $produk->stok }}"><br>
                   </div>
                   <div class="form-group">
-                    <label for="jenis">Jenis</label>
+                    <label for="jenis"><strong>Jenis</strong></label>
                     <select class="form-control select2bs4" name="jenis" id="jenis" style="width: 100%;">
                       @foreach ($jenisproduk as $item)
                         <option value="{{ $item->id }}" {{ $produk->id_jenis == $item->id ? 'selected' : '' }}>{{ $item->namajenis }}</option>
@@ -75,4 +86,8 @@
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
+      </div>
+</div>
+</div>
+<br></br>
       @endsection

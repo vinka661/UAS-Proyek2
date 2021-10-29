@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class Produk extends Model
 {
     public $table = "produk";
-    protected $fillable = ['namaproduk', 'harga', 'satuan', 'status', 'stok', 'id_jenis'];
+    protected $fillable = ['namaproduk', 'harga', 'satuan','image', 'status', 'stok', 'id_jenis'];
 
     public function jenisproduk()
     {

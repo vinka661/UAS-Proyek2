@@ -1,11 +1,14 @@
 @extends('master')
 @section('konten')       
     <!-- Content Header (Page header) -->
+    <section>
+    <div class="container ">
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Tambah Jenis Produk Baru</h1>
+            <br>
+            <h2 class="m-0 text-dark"><strong>Tambah Jenis Produk Baru</strong></h2></br>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -22,7 +25,7 @@
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="nama_jenis">Nama Jenis</label>
+                    <label for="nama_jenis"><strong>Nama Jenis<strong></label><br></br>
                     <input type="text" class="form-control" id="namajenis" name="namajenis" placeholder="Nama Jenis" required>
                   </div>
                 </div>
@@ -38,4 +41,15 @@
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
+      </div>
+</div>
+</div>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
       @endsection

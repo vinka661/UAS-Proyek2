@@ -40,7 +40,6 @@ class JenisProdukController extends Controller
         $jenisproduk->save();
         return redirect('jenisproduk');
     }
-
     public function destroy($id)
     {
         $jenisproduk = JenisProduk::find($id);

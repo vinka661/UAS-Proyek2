@@ -1,11 +1,13 @@
 @extends('master')
 @section('konten')     
     <!-- Content Header (Page header) -->
+    <section>
+    <div class="container ">
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Data Jenis Produk</h1>
+            <h2 class="m-0 text-dark"><strong>DATA JENIS BARANG</strong></h2>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -22,7 +24,7 @@
                 <a href="{{ route('createJenisProduk') }}"><button  class="btn btn-primary btn-sm"><i class="bi-plus"></i> Tambah Baru</button></a>
               </div>
               <div class="card-body table-responsive p-0" style="height: 400px;">
-                  <table class="table table-head-fixed text-nowrap">
+                  <table class="table table-bordered table-striped">
                     <thead>
                       <tr>
                         <th>#</th>
@@ -51,5 +53,11 @@
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
+      </div>
+</div>
+</div>
+<br></br>
+<br></br>
+<br></br>
       @endsection
     <!-- /.content -->

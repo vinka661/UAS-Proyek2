@@ -16,7 +16,7 @@
 // });
 
 Route::get('/produk1', 'DashboardController@produk1')->name('produk1');
-Route::get('/', 'DashboardController@beranda')->name('beranda');
+Route::get('/home', 'DashboardController@beranda')->name('home');
 //jenisproduk
 Route::get('jenisproduk', 'JenisProdukController@index')->name('jenisproduk');
 Route::get('jenisproduk/create', 'JenisProdukController@create')->name('createJenisProduk');
@@ -40,4 +40,6 @@ Route::get('persewaan', 'PersewaanController@index')->name('persewaan');
 //sistem user
 Route::get('sistemUser', 'SistemUserController@index')->name('sistemUser');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+
+Auth::routes();

@@ -28,8 +28,12 @@ class ProdukController extends Controller
 
     public function store(Request $request)
     {
+        if($request->file('image')){ 
+			$image_name = $request->file('image')->store('images','public');
+        } 
         Produk::create([
             'namaproduk' => $request->namaproduk,
+            'image' => $image_name,
             'harga' => $request->harga,
             'satuan' => $request->satuan,
             'status' => $request->status,

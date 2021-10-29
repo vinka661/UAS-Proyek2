@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Produk;
+use App\JenisProduk;
 
 class DashboardController extends Controller
 {
@@ -12,6 +14,7 @@ class DashboardController extends Controller
     }
     public function produk1()
     {
-        return view('produk1');
+        $produk = Produk::all();
+		return view('produk1',['produk'=> $produk]);
     }
 }

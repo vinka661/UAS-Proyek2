@@ -7,7 +7,9 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Data Produk</h1>
+            <br>
+            <h2 class="m-0 text-dark"><strong>DATA PRODUK</strong></h2>
+            </br>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -24,12 +26,13 @@
                 <a href="{{ route('createProduk') }}"><button  class="btn btn-primary btn-sm"><i class="bi-plus"></i> Tambah Baru</button></a>
               </div>
               <div class="card-body table-responsive p-0" style="height: 800px;">
-                  <table class="table table-head-fixed text-nowrap">
+                  <table class="table table-bordered table-striped">
                     <thead>
                       <tr>
                         <th>#</th>
                         <th>ID Produk</th>
                         <th>Nama Produk</th>
+                        <th>Gambar</th>
                         <th>Harga</th>
                         <th>Satuan</th>
                         <th>Status</th>
@@ -44,6 +47,7 @@
                             <td>{{ ++$key }}</td>
                             <td>{{ $item->id }}</td>
                             <td>{{ $item->namaproduk }}</td>
+                            <td><img width="150px" src="{{asset('storage/'.$item->image)}}"></td>
                             <td>{{ $item->harga }}</td>
                             <td>{{ $item->satuan }}</td>
                             <td>{{ $item->status }}</td>
