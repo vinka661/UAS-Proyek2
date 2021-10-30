@@ -6,20 +6,21 @@
                 @foreach($produk as $item)
                 <div class="col mb-4">
     <div class="card h-100">
-    <img src="{{asset('storage/'.$item->image)}}" class="card-img-top" alt="...">
+    <img height="150" src="{{asset('storage/'.$item->image)}}" class="card-img-top" alt="...">
         <div class="card-body">
-        <p class="card-text">
-        <strong>{{$item->namaproduk}}</strong>
-        <br>
-        <strong>Harga :</strong> {{$item->harga}}
-        <hr>
-        <p class="card-text">SIZE : S M L XL </p>
-        <strong>Status :</strong>
-        {{ $item->status}}
+          <p class="card-text">
+            <strong>{{$item->namaproduk}}</strong>
+            <br>
+            <strong>Harga :</strong> {{$item->harga}}
+            <hr>
+            <strong>Status :</strong>
+            {{ $item->status}}
+            <br>
+            <strong>Stok :</strong>
+            {{ $item->stok}}
         </p>
           <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
           <br></br>
-          <a href="#" class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Pesan</a>
       </div>
     </div>
   </div>

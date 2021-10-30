@@ -54,6 +54,12 @@ class ProdukController extends Controller
     {
         $produk = Produk::find($id);
         $produk->namaproduk = $request->namaproduk;
+        if($produk->image && file_exists(storage_path('app/public/' . $produk->image)))
+        {
+            \Storage::delete('public/'.$produk->image);
+        }
+        $image_name = $request->file('image')->store('images', 'public');
+        $produk->image = $image_name;
         $produk->harga = $request->harga;
         $produk->satuan = $request->satuan;
         $produk->status = $request->status;
@@ -69,4 +75,5 @@ class ProdukController extends Controller
         $produk->delete();
         return redirect('produk');
     }
+    
 }

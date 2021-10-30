@@ -66,6 +66,16 @@
                                 </div>
                             </div>
 
+                            <div class="form-group row">
+                                <label for="roles" class="col-md-4 col-form-label text-md-right">Roles</label>
+                                <div class="col-md-6">
+                                <select class="form-control select2bs4" name="roles" id="roles" style="width: 100%;" required></br>
+                                    <option value="Administrator" disabled>Administrator</option>
+                                    <option value="Customer">Customer</option>
+                                </select>
+                                </div>
+                            </div>
+
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-8 text-md-left">
                                     <button type="submit" class="btn btn-dark">

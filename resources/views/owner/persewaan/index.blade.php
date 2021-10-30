@@ -24,7 +24,7 @@
                 <a href="{{ route('createPersewaan') }}"><button  class="btn btn-primary btn-sm"><i class="bi-plus"></i> Tambah Baru</button></a>
               </div>
               <div class="card-body table-responsive p-0" style="height: 800px;">
-                  <table class="table table-head-fixed text-nowrap">
+                  <table class="table table-bordered table-striped">
                     <thead>
                       <tr>
                         <th>#</th>
@@ -52,8 +52,8 @@
                             <td>{{ $item->user->name }}</td>
                             <td>{{ $item->produk->namaproduk }}</td>
                             <td>
-                              <a href=""><button  class="btn btn-danger btn-sm"><i class="bi-pencil-fill"></i> Edit</button></a>
-                              <a href=""><button  class="btn btn-warning btn-sm"><i class="bi-trash"></i> Delete</button></a>
+                              <a href="{{ route('editPersewaan', $item->id) }}"><button  class="btn btn-danger btn-sm"><i class="bi-pencil-fill"></i> Edit</button></a>
+                              <a href="{{ route('deletePersewaan', $item->id) }}"><button  class="btn btn-warning btn-sm"><i class="bi-trash"></i> Delete</button></a>
                             </td>
                           </tr>
                       @endforeach

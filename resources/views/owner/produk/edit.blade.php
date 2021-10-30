@@ -22,7 +22,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="card card-primary card-outline">
-              <form role="form" action="{{ route('updateProduk', $produk->id) }}" method="POST">
+              <form role="form" action="{{ route('updateProduk', $produk->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
@@ -34,9 +34,9 @@
                     <input type="text" class="form-control" id="namaproduk" name="namaproduk" value="{{ $produk->namaproduk }}"><br>
                   </div>
                   <div class="form-group"> 
-                <label for="image"><strong>Image</strong></label>                 
-                <input type="file" class="form-control" required="required" name="image" value="{{$produk->image}}"></br> 
-                <img width="150px" src="{{asset('storage/'.$produk->image)}}">
+                    <label for="image"><strong>Image</strong></label>                 
+                    <input type="file" class="form-control" required="required" name="image" value="{{ $produk->image }}"></br> 
+                    <img width="150px" src="{{asset('storage/'.$produk->image)}}">
                  </div> 
                  <br>
                   <div class="form-group">

@@ -22,8 +22,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="card card-primary card-outline">
-              <form role="form" action="{{ route('storeProduk') }}" method="POST"
-              enctype="multipart/form-data">
+              <form role="form" action="{{ route('storeProduk') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
@@ -31,8 +30,8 @@
                     <input type="text" class="form-control" id="namaproduk" name="namaproduk" placeholder="Nama Produk" required></br>
                   </div>
                   <div>
-                  <label for="image"><strong>Gambar</strong></label>                 
-                <input type="file" class="form-control" required="required" name="image"></br> 
+                    <label for="image"><strong>Gambar</strong></label>                 
+                    <input type="file" class="form-control" required="required" name="image"></br> 
                   </div>
                   <div class="form-group">
                     <label for="harga"><strong>Harga</strong></label>

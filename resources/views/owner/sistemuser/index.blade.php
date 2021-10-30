@@ -22,7 +22,7 @@
           <div class="col-lg-12">
             <div class="card card-primary card-outline">
               <div class="card-header">
-                <a href=""><button  class="btn btn-primary btn-sm"><i class="bi-plus"></i> Tambah Baru</button></a>
+                <a href="{{ route('createUser') }}"><button  class="btn btn-primary btn-sm"><i class="bi-plus"></i> Tambah Baru</button></a>
               </div>
               <div class="card-body table-responsive p-0" style="height: 800px;">
                   <table class="table table-bordered table-striped">
@@ -45,8 +45,8 @@
                             <td>{{ $item->password }}</td>
                             <td>{{ $item->roles }}</td>
                             <td>
-                              <a href=""><button  class="btn btn-danger btn-sm"><i class="bi-pencil-fill"></i> Edit</button></a>
-                              <a href=""><button  class="btn btn-warning btn-sm"><i class="bi-trash"></i> Delete</button></a>
+                              <a href="{{ route('editUser', $item->id) }}"><button  class="btn btn-danger btn-sm"><i class="bi-pencil-fill"></i> Edit</button></a>
+                              <a href="{{ route('deleteUser', $item->id) }}"><button  class="btn btn-warning btn-sm"><i class="bi-trash"></i> Delete</button></a>
                             </td>
                           </tr>
                       @endforeach

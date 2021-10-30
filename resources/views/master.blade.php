@@ -32,6 +32,11 @@
                         </li>
                         <li class="nav-item"><a class="nav-link active" href="{{ route('persewaan') }}"><strong>PERSEWAAN</strong></a></li>
                         <li class="nav-item"><a class="nav-link active" href="{{ route('sistemUser') }}"><strong>SISTEM USER</strong></a></li>
+                        <li class="nav-item"><a class="nav-link active" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><strong>LOGOUT</strong></a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </li>
                     </ul>
                     <form class="d-flex">
                         <button class="btn btn-outline-light" type="submit">
