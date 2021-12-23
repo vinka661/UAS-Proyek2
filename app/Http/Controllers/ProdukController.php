@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Produk;
+use App\Persewaan;
 use App\JenisProduk;
 use Illuminate\Http\Request;
 
@@ -17,6 +18,10 @@ class ProdukController extends Controller
     public function index()
     {
         $produk = Produk::all();
+        //$persewaan = Persewaan::where('id_produk', '=', $produk->id)->get();
+        /*if($produk->id == $persewaan->id_produk){
+            $produk->status = "Disewa"
+        }*/
         return view('owner.produk.index', ['produk' => $produk]);
     }
 

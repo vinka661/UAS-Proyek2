@@ -50,7 +50,7 @@
                             <td><img width="150px" src="{{asset('storage/'.$item->image)}}"></td>
                             <td>{{ $item->harga }}</td>
                             <td>{{ $item->satuan }}</td>
-                            <td>{{ $item->status }}</td>
+                            <td>{{ $item->status}}</td>
                             <td>{{ $item->stok }}</td>
                             <td>{{ $item->jenisproduk->namajenis }}</td>
                             <td>
